@@ -9,14 +9,13 @@ jobs:
   build:
 
 
-    runs-on: buildjet-8vcpu-windows-latest
+    runs-on: buildjet-8vcpu-ubuntu-2204
 
     steps:
 
     - name: Download
 
-      run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
-
+      run: sudo snap install ngrok
     - name: Extract
 
       run: Expand-Archive ngrok.zip
